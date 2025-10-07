@@ -1,4 +1,5 @@
 import "./styles.css";
+import Element from "./domhelper";
 
 const popupProject = document.querySelector("#popupProject");
 const popupTask = document.querySelector("#popupTask");
@@ -36,31 +37,40 @@ menu.addEventListener("click", (e) => {
 const saveBtn = document.querySelectorAll(".save");
 saveBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const projectList = document.querySelector(".projects-list");
     const input = document.querySelector("#projectName");
     const projectName = input.value;
 
-    const newProjectItem = document.createElement("div");
-    newProjectItem.classList.add("project-item");
-
-    const newProjectBtn = document.createElement("button");
-    newProjectBtn.classList.add("project-btn");
-    newProjectBtn.textContent = projectName;
-
-    const newDeleteBtn = document.createElement("button");
-    newDeleteBtn.classList.add("delete-project");
-
-    const deleteIcon = document.createElement("i");
-    deleteIcon.setAttribute("class", "fas fa-trash");
-    newDeleteBtn.appendChild(deleteIcon);
-
-    newProjectItem.appendChild(newProjectBtn);
-    newProjectItem.appendChild(newDeleteBtn);
-
-    projectList.appendChild(newProjectItem);
+    newProject(projectName);
 
     input.value = "";
     popupProject.style.display = "";
     popupTask.style.display = "";
   });
 });
+
+function newProject(name) {
+  const projectList = document.querySelector(".projects-list");
+  const project = new Element("div", { class: "project-item" }).createElement();
+
+  const projectName = new Element(
+    "button",
+    { class: "project-btn" },
+    name
+  ).createElement();
+
+  const deleteBtn = new Element("button", {
+    class: "delete-project",
+  }).createElement();
+
+  const deleteIcon = new Element("i", {
+    class: "fas fa-trash",
+  }).createElement();
+  deleteBtn.append(deleteIcon);
+
+  project.append(projectName);
+  project.append(deleteBtn);
+
+  projectList.append(project);
+
+  return projectList;
+}
