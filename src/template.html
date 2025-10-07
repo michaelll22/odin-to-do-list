@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <main>
+        <nav>
+          <div class="sidebar">
+            <div class="menu">
+              <h2>To Do</h2>
+              <button id="btnAll">All</button>
+              <button id="btnToday">Today</button>
+              <button id="btnWeek">Week</button>
+              <button id="btnImportant">Important</button>
+              <button id="btnDone">Done</button>
+            </div>
+
+            <div class="projects-section">
+              <div class="projects-header">
+                <p>Projects</p>
+                <button id="addProjectBtn">+</button>
+              </div>
+              <div class="projects-list"></div>
+            </div>
+          </div>
+        </nav>
+
+        <section class="content">
+          <h2 id="projectTitle">Projects</h2>
+          <hr />
+          <div id="tasksList" class="tasks"></div>
+          <button class="add-task" id="addTaskBtn">+</button>
+        </section>
+      </main>
+
+      <!-- Popup Modals -->
+
+      <div class="popup-overlay" id="popupProject">
+        <div class="popup">
+          <h3>New Project</h3>
+          <input type="text" id="projectName" placeholder="Project Name" />
+          <div class="popup-buttons">
+            <button class="cancel" id="cancelProject">Cancel</button>
+            <button class="save" id="saveProject">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup-overlay" id="popupTask">
+        <div class="popup">
+          <h3>New Task</h3>
+          <input type="text" id="taskName" placeholder="Task Name" />
+          <textarea id="taskDesc" placeholder="Description"></textarea>
+          <input type="date" id="taskDate" placeholder="Task Name" />
+
+          <div class="priority-options">
+            <label class="priority-box low">
+              <input type="radio" name="priority" value="low" checked />
+              <span>Low</span>
+            </label>
+            <label class="priority-box medium">
+              <input type="radio" name="priority" value="medium" />
+              <span>Medium</span>
+            </label>
+            <label class="priority-box high">
+              <input type="radio" name="priority" value="high" />
+              <span>High</span>
+            </label>
+          </div>
+
+          <select id="taskProject">
+            <option value="">Select Project</option>
+          </select>
+
+          <div class="popup-buttons">
+            <button class="cancel" id="cancelTask">Cancel</button>
+            <button class="save" id="saveTask">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
