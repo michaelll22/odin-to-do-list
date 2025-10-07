@@ -20,3 +20,15 @@ cancelBtn.forEach((btn) => {
     popupTask.style.display = "";
   });
 });
+
+const menu = document.querySelector(".menu");
+
+menu.addEventListener("click", (e) => {
+  if (!e.target.matches("button")) return;
+  menu
+    .querySelectorAll("button")
+    .forEach((btn) => btn.classList.remove("active"));
+  e.target.classList.add("active");
+  const projectTitle = document.querySelector("#projectTitle");
+  projectTitle.textContent = e.target.textContent;
+});
