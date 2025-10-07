@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
     <title>To Do List</title>
   </head>
   <body>
@@ -24,7 +29,29 @@
                 <p>Projects</p>
                 <button id="addProjectBtn">+</button>
               </div>
-              <div class="projects-list"></div>
+              <div class="projects-list">
+
+                <div class="project-item">
+                  <button class="project-btn">test1</button>
+                  <button class="delete-project">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+
+                <div class="project-item active">
+                  <button class="project-btn">test2</button>
+                  <button class="delete-project">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+
+                <div class="project-item">
+                  <button class="project-btn">test3</button>
+                  <button class="delete-project">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </nav>

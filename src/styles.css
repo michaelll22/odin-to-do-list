@@ -112,6 +112,59 @@ nav {
   gap: 0.3rem;
 }
 
+/* project item */
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  gap: 6px;
+}
+
+.project-item:hover:not(.active) {
+  background: var(--highlight);
+}
+
+.project-item.active {
+  background-color: var(--primary);
+}
+
+.project-btn {
+  flex: 1;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-item.active .project-btn {
+  color: var(--bg);
+}
+
+.delete-project {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 6px;
+  transition: color 0.2s;
+}
+
+.delete-project:hover {
+  color: brown;
+}
+
 /* Main Content Styling */
 
 .content {
